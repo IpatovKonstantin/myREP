@@ -6,9 +6,10 @@ public class Main {
 
     public static Scanner in = new Scanner(System.in);
     static Office office = new Office();
+    public static int n;
 
     public static void fill(){
-        int n = in.nextInt();
+        n = in.nextInt();
         for (int i = 0; i < n; i++) {
             Employee employee = new Employee(in.next(), in.next(),in.nextInt(), Runk.valueOf(in.next()));
             office.add(employee);
@@ -32,6 +33,13 @@ public class Main {
         }
     }
 
+    public static void sor(){
+        for(Employee employee: office.sort()){
+            System.out.println(employee);
+
+        }
+    }
+
     public static void main(String[] args){
         System.out.println("ВВедите команду");
 
@@ -40,10 +48,11 @@ public class Main {
             fill();
         }
 
-        String command2 = in.next();
-        if (command2.equals("out")) {
-            outInfo();
-        }
+//        String command2 = in.next();
+//        if (command2.equals("out")) {
+//            outInfo();
+//        }
+        sor();
 
         String command3 = in.next();
         if (command3.equals("find")){

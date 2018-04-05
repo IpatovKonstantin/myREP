@@ -9,6 +9,24 @@ public class Office {
         return list.contains(employee);
     }
 
+    public List<Employee> sort(){
+        List<Employee> intList = new ArrayList<>();
+
+        for (Employee employee: this.list){
+            for (int i = 0; i<list.size()-1;i++) {
+                Employee min = list.get(i);
+                for (int j = i+1; j < list.size(); j++) {
+                    if (list.get(i).getLastName().compareTo(list.get(j).getLastName()) > 0) {
+                        min = list.get(j);
+                    }
+                }
+                intList.add(min);
+            }
+        }
+        return intList;
+
+    }
+
     public List<Employee> find(Runk runk){
         ArrayList<Employee> result = new ArrayList<>();
         for (Employee employee: list){
