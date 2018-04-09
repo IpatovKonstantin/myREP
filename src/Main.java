@@ -34,10 +34,9 @@ public class Main {
     }
 
     public static void sor(){
-        for(Employee employee: office.sort()){
-            System.out.println(employee);
+        office.sort();
+        office.showEmployeeList();
 
-        }
     }
 
     public static void main(String[] args){
@@ -54,9 +53,9 @@ public class Main {
 //        }
         sor();
 
-        String command3 = in.next();
-        if (command3.equals("find")){
-            find();
-        }
+//        String command3 = in.next();
+//        if (command3.equals("find")){
+//            find();
+//        }
     }
 }

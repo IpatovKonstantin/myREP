@@ -5,25 +5,21 @@ public class Office {
 
     private ArrayList<Employee> list = new ArrayList<>();
 
+
     public boolean isEmployeanoffice(Employee employee){
         return list.contains(employee);
     }
 
-    public List<Employee> sort(){
-        List<Employee> intList = new ArrayList<>();
-
-        for (Employee employee: this.list){
-            for (int i = 0; i<list.size()-1;i++) {
-                Employee min = list.get(i);
-                for (int j = i+1; j < list.size(); j++) {
-                    if (list.get(i).getLastName().compareTo(list.get(j).getLastName()) > 0) {
-                        min = list.get(j);
-                    }
+    public void sort(){
+        for(int i = list.size()-1; i>0;i--){
+            for (int j=0;j<i;j++){
+                if (list.get(j).compareTo(list.get(j+1))>0){
+                    Employee buf = list.get(j);
+                    list.set(j,list.get(j+1));
+                    list.set(j+1,buf);
                 }
-                intList.add(min);
             }
         }
-        return intList;
 
     }
 

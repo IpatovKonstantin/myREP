@@ -26,6 +26,7 @@ public class Employee extends Object implements Comparable {
         this.runk = runk;
         this.salary = salary;
     }
+
     public String toString(){
         return LastName + " " + FirstName + " " + salary + " " + this.runk.getName();
     }
